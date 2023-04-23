@@ -1,0 +1,175 @@
+@font-face {
+    font-family: 'banger';
+    src: url('./Bangers-Regular.ttf') format('ttf');
+      
+  }
+  
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+    
+
+
+}
+
+body{
+    background-color: #1D1D1D;
+    width: 100%;
+    height: 100vh;
+}  body::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: rgb(var(--theme-background));
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+
+  a {
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+
+#play_c.hide{
+display: none;
+}
+#pause_c.hide{
+display: none;
+}
+
+#play_s.hide{
+    display: none;
+}
+#pause_s.hide{
+    display: none;
+}
+
+
+.container1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+
+  
+}
+.links{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 105px;
+    transition: 0.2s ease-in;
+}
+.links a{
+    color: white;
+    display: flex;
+    gap: 10px;
+}
+
+.links a h6:hover{
+  
+    color: aqua !important;
+    text-decoration: underline;
+    transform: scale(1.1);
+
+    text-transform: uppercase;
+
+  
+}
+
+
+.stop_watch{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+.card{
+    width: 600px;
+    height: 250px;
+    background: #000;
+    border: none;
+    border-bottom-left-radius: 50px ;
+    box-shadow: 5px 5px 55px hsla(185, 99%, 46%, 0.2);
+    color: #Fff;
+    text-align: center;
+    display: flex;
+    position: relative;
+  
+
+}
+#S_timer{
+    display: flex;
+    font-size: 4em;
+
+    justify-content: center;
+}
+.mili{
+    font-size: 2em;
+    position: absolute;
+    top: 15%;
+    left: 70%;
+}
+.row1{
+}
+
+h1{
+    color: white;
+    font-family: cursive;
+}
+
+
+.btn-div{
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn-div button {
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    transition: 0.3s ease-in;
+
+}
+.btn-div button:hover{
+transform: scale(1.1)  rotate(-30deg);
+filter: drop-shadow(5px 0px 15px #3DC285);
+
+
+}
+.btn-div .btn2:hover{
+transform: scale(1.1)  rotate(-30deg);
+filter: drop-shadow(5px 0px 15px red);
+
+
+}
+
+.countdown{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+#timer{
+    display: flex;
+    font-size: 4em;
+
+    justify-content: center;
+}

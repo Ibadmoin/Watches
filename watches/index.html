@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch</title>
+    <link rel="stylesheet" href="bootstrape.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col links text-center ">
+                <a href="#S_timer_h">
+                    <h6>Stop Watch</h6>
+                </a>
+                <a href="#timer_h">
+                    <h6>Timer</h6>
+                </a>
+            </div>
+
+
+
+        </div>
+
+        <div class="container stop_watch">
+            <div class="row">
+                <h1 id="S_timer_h">Stop Watch</h1>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="div" id="S_timer">00:00:00</div> <span id="mili" class="mili">00</span>
+                        <div class="btn-div">
+                            <button onclick="start_s()" id="play_s"><img width="100" src="play.png" alt=""></button>
+                            <button onclick="pause_s()" id="pause_s" class="btn2"><img width="100" src="stop-button.png" alt=""></button>
+                            <button onclick="reset_s()" class="btn2"><img width="100" src="undo.png" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container countdown  mb-5">
+            <div class="row">
+                <h1 id="timer_h">Countdown</h1>
+            </div>
+            <div class="row ">
+                <div class="col">
+                    <div class="card mb-5">
+                        <div class="div" id="timer" contenteditable="true">13:03:04</div> 
+                        <div class="btn-div">
+                            <button onclick="start()" id="play_c"><img width="100" src="play.png" alt=""></button>
+                            <button onclick="pause()" id="pause_c" class="btn2"><img width="100" src="stop-button.png" alt=""></button>
+                            <button onclick="resettimer()" class="btn2"><img width="100" src="undo.png" alt=""></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="bootstrape.js"></script>
+    <script src="https://kit.fontawesome.com/b4fc311639.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+</body>
+
+</html>
