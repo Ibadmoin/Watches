@@ -173,3 +173,19 @@ filter: drop-shadow(5px 0px 15px red);
 
     justify-content: center;
 }
+.mutebtn{
+    /* background-color: red !important; */
+    margin-top: 50px;
+    position: absolute;
+    left: 80%;
+
+}
+.mutebtn i{
+    font-size: 1.5em;
+    color: #Fff;
+
+}
+
+#mutebtn.hide{
+    display: none;
+}

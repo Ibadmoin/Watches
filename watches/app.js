@@ -8,55 +8,80 @@
 //     clockelement.textContent = formatedtime;
 
 // },1000);
-var hour = 13;
-var min = 03;
-var sec = 04;
+var hour ;
+var min ;
+var sec ;
 var settimer = document.getElementById("timer");
+var input = document.getElementById("timer").textContent;
 var playbtn =  document.getElementById("play_c"); 
 var pausebtn =  document.getElementById("pause_c"); 
+var mutebtn = document.getElementById("mutebtn");
+mutebtn.classList.add("hide");
 pausebtn.classList.add("hide");
 
 
 var timer;
 
+// create an audio object and load the beep.mp3 file
+var audio = new Audio("beep.mp3");
+
 function updatetimer() {
-  console.log (hour + ":" + min + ":" + sec);
-  settimer.innerText = (hour +"h" + ":" + min +"m" + ":" + sec+"s");
-  
-  if (sec < 1) {
+  if ( sec < 0){
     sec = 59;
     min--;
-  }
-  if (min < 1) {
-    min = 59;
-    hour--;
-  }
-  if (hour == 0 && min == 0 && sec == 0) {
+    if ( min < 0){
+      min = 59;
+      hour--;
+    }
+  }if (hour == 0 && min == 0 && sec == 0){
     clearInterval(timer);
-    
-   
-    console.log("00:00:00");
-    console.log("timer over!");
-  } else if (min >= 0 && sec >= 0) {
-     var formattedHour = hour.toString().padStart(2, '0');
-  var formattedMin = min.toString().padStart(2, '0');
-  var formattedSec = sec.toString().padStart(2, '0');
-  settimer.innerText = formattedHour + ":" + formattedMin + ":" + formattedSec;
-    sec--;
-    playbtn.classList.add("hide");
-    pausebtn.classList.remove("hide");
+    console.log("time over");
+    pausebtn.classList.add("hide");
+    playbtn.classList.remove("hide");
+    mutebtn.classList.remove("hide");
+    audio.loop = true;
+    audio.play("beep.mp3");
+    document.getElementById("mutebtn").addEventListener("click", function(){
+      audio.loop = false;
+    audio.pause("beep.mp3");
+    mutebtn.classList.add("hide");
+    })
+
+  
   }
+  var formattedHour = hour.toString().padStart(2,"0");
+  var formattedMin = min.toString().padStart(2,"0");
+  var formattedSec = sec.toString().padStart(2,"0");
+  settimer.innerText = formattedHour + ":" + formattedMin + ":" + formattedSec;
+  sec--
 }
 
-function start() {
- var inputtime  = document.getElementById("timer").textContent;
- var [hour_i, min_i,sec_i] = inputtime.split(":");
- hour = parseInt(hour_i,10);
- min = parseInt(min_i,10);
- sec = parseInt(sec_i,10);
 
-    timer = setInterval(updatetimer, 1000);
-  play.classList.add("hide");
+
+
+
+
+
+
+function start(){
+  timer = setInterval(updatetimer,1000);
+  input = settimer.textContent;
+  [hour ,  min , sec] = input.split(":");
+  playbtn.classList.add("hide");
+  pausebtn.classList.remove("hide");
+  if (hour == 0 && min == 0 && sec ==0){
+    hour = 0;
+    min = 5;
+    sec  = 0;
+  }
+
+
+
+  audio.loop = false;
+  audio.pause("beep.mp3");
+  mutebtn.classList.add("hide");
+
+
 }
 
 function resettimer() {
@@ -64,11 +89,16 @@ function resettimer() {
   hour = 0;
   min = 5;
   sec = 00;
-  var formattedHour = hour.toString().padStart(2,"0");
-  var formattedMin = min.toString().padStart(2,"0");
-  var formattedSec = sec.toString().padStart(2,"0");
+   formattedHour = hour.toString().padStart(2,"0");
+   formattedMin = min.toString().padStart(2,"0");
+ formattedSec = sec.toString().padStart(2,"0");
   settimer.innerText = formattedHour + ":" + formattedMin + ":" + formattedSec;
-  play.classList.remove("hide");
+  pausebtn.classList.add("hide");
+  playbtn.classList.remove("hide");
+
+  audio.loop = false;
+  audio.pause("beep.mp3");
+  mutebtn.classList.add("hide");
   
 }
 
@@ -135,6 +165,8 @@ function reset_s(){
    formattedmili_s = mili_s.toString().padStart(2,"0");
   stopwtach.innerText = formattedHour_s + ":" + formattedmin_s + ":" + formattedsec_s;
   mili.innerText =  formattedmili_s;
+  playbtn_s.classList.remove("hide");
+  pausebtn_s.classList.add("hide");
 
 }
 function pause_s(){

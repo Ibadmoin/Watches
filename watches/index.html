@@ -49,19 +49,21 @@
                 <h1 id="timer_h">Countdown</h1>
             </div>
             <div class="row ">
-                <div class="col">
+                <div class="col-6">
                     <div class="card mb-5">
-                        <div class="div" id="timer" contenteditable="true">13:03:04</div> 
+                        <div class="div" id="timer" contenteditable="true">0:0:10</div> 
                         <div class="btn-div">
                             <button onclick="start()" id="play_c"><img width="100" src="play.png" alt=""></button>
                             <button onclick="pause()" id="pause_c" class="btn2"><img width="100" src="stop-button.png" alt=""></button>
                             <button onclick="resettimer()" class="btn2"><img width="100" src="undo.png" alt=""></button>
+                            <button id="mutebtn" class="mutebtn" ><i class="fa-solid fa-volume-high"></i></button>
+                      
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+        <audio src="beep.mp3" preload="auto" id="beep.mp3"></audio>
     </div>
 
 
